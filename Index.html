@@ -11,9 +11,8 @@
 </head>
 
 <body>
-    <div id="main">
-
-        <!--
+    <div id="main" v-if="display">
+<!--
        <h1>{{ message }}</h1> 
     <ul>
         <li v-for="test in gameData">{{ test }}</li>
@@ -41,19 +40,19 @@
                         </option>
                     </select>
                 </div>
-                <!--                <img id="icondown">-->
+                                <img id="icondown" src="C:/Users/viooo/OneDrive/Viola/WERK/Projecten/Ubiqum/Project 3 NYSL app/NYSL app/chevron_down.png">
             </div>
 
             <div class="date">
                 <div class="card" v-for="(card, index) in filtered" v-bind:key="index">
                     <div class="saturday" v-if="index % 2 == 0">{{card.day}}</div>
-                    <div class="button">
+                    <button @click="display = !display" class="button">
                         <div class="topbutton">
                             <h4 class="teams">{{card.teamA}} vs. {{card.teamB}}</h4>
                             <p class="time">{{card.time}}</p>
                         </div>
                         <p class="location">{{card.elementary_short}}</p>
-                    </div>
+                    </button>
                 </div>
             </div>
 

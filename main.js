@@ -1,6 +1,7 @@
 var app = new Vue({
     el: '#main',
     data: {
+        display: true,
         message: 'Hello Vue!',
         array: ["hello", "hi", "Yeah!"],
         gameData: [],
