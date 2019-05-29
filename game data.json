@@ -1,0 +1,215 @@
+{
+    "game_schedule": [
+        {
+            "date": "01 September 2019",
+            "day": "Saturday - 01 September 2019",
+            "teamA": "Red Devils",
+            "teamB": "Bandits",
+            "time": "09:30 AM",
+            "elementary_short": "AJ Katzenmaier",
+            "elementary": "AJ Katzenmaier Elementary",
+            "street": "24 W. Walton St.",
+            "city": "Chicago, IL  60610",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.654246110987!2d-87.6312390845582!3d41.90029237922041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573361167!5m2!1snl!2snl"
+      },
+        {
+            "date": "01 September 2019",
+            "day": "Saturday - 01 September 2019",
+            "teamA": "Pros",
+            "teamB": "Tornados",
+            "time": "01:00 PM",
+            "elementary_short": "Greenbay",
+            "elementary": "Greenbay Elementary",
+            "street": "1734 N. Orleans St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0258843688543!2d-87.64002798460851!3d41.91380227921943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573483767!5m2!1snl!2snl"
+      },
+        {
+            "date": "08 September 2019",
+            "day": "Saturday - 08 September 2019",
+            "teamA": "United",
+            "teamB": "Aces",
+            "time": "09:30 AM",
+            "elementary_short": "Howard A Yeager",
+            "elementary": "Howard A Yeager Elementary",
+            "Street": "2245 N. Southport Ave.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5856830856183!2d-87.66511458460819!3d41.923264579218646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573569742!5m2!1snl!2snl"
+      },
+        {
+            "date": "08 September 2019",
+            "day": "Saturday - 08 September 2019",
+            "teamA": "Aces",
+            "teamB": "Red Devils",
+            "time": "01:00 PM",
+            "elementary_short": "Marjorie P Hart",
+            "elementary": "Marjorie P Hart Elementary",
+            "street": "2625 N. Orchard St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2919146584336!2d-87.64808628460803!3d41.9295782792181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573632092!5m2!1snl!2snl"
+      },
+        {
+            "date": "15 September 2019",
+            "day": "Saturday - 15 September 2019",
+            "teamA": "Tornados",
+            "teamB": "Bandits",
+            "time": "09:30 AM",
+            "elementary_short": "North",
+            "elementary": "North Elementary",
+            "street": "2625 N. Orchard St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3377998492138!2d-87.64837698460872!3d41.90709647921986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af0e6ccc3%3A0x26c81c1d557667da!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573750156!5m2!1snl!2snl"
+      },
+        {
+            "date": "15 September 2019",
+            "day": "Saturday - 15 September 2019",
+            "teamA": "Pros",
+            "teamB": "United",
+            "time": "01:00 PM",
+            "elementary_short": "AJ Katzenmaier",
+            "elementary": "AJ Katzenmaier Elementary",
+            "street": "24 W. Walton St.",
+            "city": "Chicago, IL  60610",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.654246110987!2d-87.6312390845582!3d41.90029237922041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573361167!5m2!1snl!2snl"
+      },
+        {
+            "date": "22 September 2019",
+            "day": "Saturday - 22 September 2019",
+            "teamA": "Red Devils",
+            "teamB": "Pros",
+            "time": "09:30 AM",
+            "elementary_short": "South",
+            "elementary": "South Elementary",
+            "street": "2101 N. Fremont St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7479505250626!2d-87.65355538460832!3d41.919776779219006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573861892!5m2!1snl!2snl"
+      },
+        {
+            "date": "22 September 2019",
+            "day": "Saturday - 22 September 2019",
+            "teamA": "Tornados",
+            "teamB": "Aces",
+            "time": "01:00 PM",
+            "elementary_short": "Howard A Yeager",
+            "elementary": "Howard A Yeager Elementary",
+            "Street": "2245 N. Southport Ave.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5856830856183!2d-87.66511458460819!3d41.923264579218646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573569742!5m2!1snl!2snl"
+      },
+        {
+            "date": "29 September 2019",
+            "day": "Saturday - 29 September 2019",
+            "teamA": "Bandits",
+            "teamB": "United",
+            "time": "09:30 AM",
+            "elementary_short": "Greenbay",
+            "elementary": "Greenbay Elementary",
+            "street": "1734 N. Orleans St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0258843688543!2d-87.64002798460851!3d41.91380227921943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573483767!5m2!1snl!2snl"
+      },
+        {
+            "date": "06 October 2019",
+            "day": "Saturday - 06 October 2019",
+            "teamA": "Tornados",
+            "teamB": "United",
+            "time": "09:30 AM",
+            "elementary_short": "Marjorie P Hart",
+            "elementary": "Marjorie P Hart Elementary",
+            "street": "2625 N. Orchard St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2919146584336!2d-87.64808628460803!3d41.9295782792181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573632092!5m2!1snl!2snl"
+      },
+        {
+            "date": "06 October 2019",
+            "day": "Saturday - 06 October 2019",
+            "teamA": "Red Devils",
+            "teamB": "Aces",
+            "time": "01:00 PM",
+            "elementary_short": "South",
+            "elementary": "South Elementary",
+            "street": "2101 N. Fremont St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7479505250626!2d-87.65355538460832!3d41.919776779219006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573861892!5m2!1snl!2snl"
+      },
+        {
+            "date": "13 October 2019",
+            "day": "Saturday - 13 October 2019",
+            "teamA": "Pros",
+            "teamB": "Bandits",
+            "time": "09:30 AM",
+            "elementary_short": "Howard A Yeager",
+            "elementary": "Howard A Yeager Elementary",
+            "Street": "2245 N. Southport Ave.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5856830856183!2d-87.66511458460819!3d41.923264579218646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573569742!5m2!1snl!2snl"
+      },
+        {
+            "date": "13 October 2019",
+            "day": "Saturday - 13 October 2019",
+            "teamA": "United",
+            "teamB": "Red Devils",
+            "time": "01:00 PM",
+            "elementary_short": "Greenbay",
+            "elementary": "Greenbay Elementary",
+            "street": "1734 N. Orleans St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0258843688543!2d-87.64002798460851!3d41.91380227921943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573483767!5m2!1snl!2snl"
+      }],
+
+    "elementaries": [
+        {
+            "elementary_short": "AJ Katzenmaier",
+            "elementary": "AJ Katzenmaier Elementary",
+            "street": "24 W. Walton St.",
+            "city": "Chicago, IL  60610",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.654246110987!2d-87.6312390845582!3d41.90029237922041!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34e07f6bac3%3A0x68a82e5d59952c86!2s24+W+Walton+St%2C+Chicago%2C+IL+60610%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573361167!5m2!1snl!2snl"
+         },
+        {
+            "elementary_short": "Greenbay",
+            "elementary": "Greenbay Elementary",
+            "street": "1734 N. Orleans St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.0258843688543!2d-87.64002798460851!3d41.91380227921943!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd34073f306a3%3A0x9e1726bbf8f23f0e!2s1734+N+Orleans+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573483767!5m2!1snl!2snl"
+         },
+        {
+            "elementary_short": "Howard A Yeager",
+            "elementary": "Howard A Yeager Elementary",
+            "Street": "2245 N. Southport Ave.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.5856830856183!2d-87.66511458460819!3d41.923264579218646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd2e37f9b8d2d%3A0x62ad8b907dd755d6!2s2245+N+Southport+Ave%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573569742!5m2!1snl!2snl"
+         },
+        {
+            "elementary_short": "Marjorie P Hart",
+            "elementary": "Marjorie P Hart Elementary",
+            "street": "2625 N. Orchard St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.2919146584336!2d-87.64808628460803!3d41.9295782792181!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd30f2630e551%3A0x3e719e44a5cef714!2s2625+N+Orchard+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573632092!5m2!1snl!2snl"
+         },
+        {
+            "elementary_short": "North",
+            "elementary": "North Elementary",
+            "street": "2625 N. Orchard St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2969.3377998492138!2d-87.64837698460872!3d41.90709647921986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd33af0e6ccc3%3A0x26c81c1d557667da!2s1409+N+Ogden+Ave%2C+Chicago%2C+IL+60610%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573750156!5m2!1snl!2snl"
+         },
+        {
+            "elementary_short": "South",
+            "elementary": "South Elementary",
+            "street": "2101 N. Fremont St.",
+            "city": "Chicago, IL  60614",
+            "iframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2968.7479505250626!2d-87.65355538460832!3d41.919776779219006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fd3196fb41dc7%3A0x970be7f7d6336df5!2s2101+N+Fremont+St%2C+Chicago%2C+IL+60614%2C+Verenigde+Staten!5e0!3m2!1snl!2snl!4v1555573861892!5m2!1snl!2snl"
+         }
+      ],
+
+    "teams": ["Red Devils", "Tornados", "Pros", "Bandits", "United", "Aces"],
+
+    "Contact": {
+        "job": "League Coordinator",
+        "first_name": "Michael ",
+        "last_name": "Randall",
+        "phone": "(630) 690-8132",
+        "email_games": "michael.randall@chisoccer.org",
+        "email_general": "nysl@chisoccer.org"
+    }
+}
