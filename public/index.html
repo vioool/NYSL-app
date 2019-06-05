@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="apple-mobile-web-app-title" content="NYSL">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!--
+    <link rel="apple-touch-startup-image" href="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/startup-image.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+    <link rel="shortcut icon" sizes="196x196" href="icon-196x196.png">
+-->
+    <title>Game Schedule</title>
+</head>
+
+<body>
+    <div id="main">
+        <div id="game_schedule" v-if="display == 'game_schedule'">
+            <div class="container">
+                <header>
+                    <h2 id="title">Game Schedule</h2>
+                    <img @click="changeDisplay('team_chat')" id="iconchat" src="message_icon.png">
+                </header>
+
+                <div class="banner">
+                    <img src="./banner.png" class="responsive">
+                </div>
+
+                <div class="filterbar">
+                    <select id='team-selector' v-on:change="filterGames" v-model="teamSelected">
+                        <option value="all">Select Team</option>
+                        <img id="icondown" src="chevron_down.png">
+                        <option v-for="option in teamList" v-bind:value="option">
+                            <p> {{ option }} </p>
+                        </option>
+                    </select>
+                </div>
+
+                <div class="date">
+                    <div class="card" v-for="(match, index) in filtered" v-bind:key="index">
+                        <div class="saturday" v-if="index % 2 == 0">{{match.day}}</div>
+                        <button @click="changeDisplay('location'), changeGame(match)" class="button">
+                            <!--4. add a second function B to the select on click element C with a parameter (match) that refers to the parameter (game) in the function B-->
+                            <div class="topinfo">
+                                <h4 class="teams">{{match.teamA}} vs. {{match.teamB}}</h4>
+                                <p class="time">{{match.time}}</p>
+                            </div>
+                            <p class="school">{{match.elementary_short}}</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="location" v-if="display == 'location'">
+            <div class="container">
+                <header>
+                    <h2 id="title">Location</h2>
+                    <img @click="changeDisplay('team_chat')" id="iconchat" src="message_icon.png">
+                    <img @click="changeDisplay('game_schedule')" id="iconback" src="arrow_back.png">
+                </header>
+                <!--current game-->
+                <div class="next-game" v-if="show == 'next_game'">
+                    <div class="map">
+                        <iframe v-bind:src="selectedGame.iframe"></iframe>
+                    </div>
+                    <!--5. to access the right data in JSON use the sourse var A with the right place in the object in JSON-->
+                    <div class="gamepage">
+                        <div class="address">
+                            <h1>{{selectedGame.elementary}}</h1>
+                            <p>{{selectedGame.street}}</p>
+                            <p>{{selectedGame.city}}</p>
+                        </div>
+                        <div class="teamblock">
+                            <div class="topinfo">
+                                <h6 class="teams">{{selectedGame.teamA}} vs. {{selectedGame.teamB}}</h6>
+                                <p class="right">{{selectedGame.date}}</p>
+                            </div>
+                            <p class='bottom'>{{selectedGame.time}}</p>
+                        </div>
+                        <div class="general">
+                            <p>Facility Type: Outdoor</p>
+                            <p>Additional Information: If deemed necessary by NYSL, games may be shortened or cancelled due to extreme weather conditions.</p>
+                        </div>
+                    </div>
+                </div>
+                <!--<p>Next Game</p>-->
+                <div class="stepper">
+                    <button @click="prevGame" class="prev">
+                        <img src="chevron_left.png">
+                        <p>Prev Game</p>
+                    </button>
+                    <button @click="nextGame" class="next">
+                        <p>Next Game</p>
+                        <img src="chevron_right.png">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="team_chat" v-if="display == 'team_chat'">
+            <div class="container">
+
+                <header>
+                    <h2 id="title">Team Chat</h2>
+                    <img @click="changeDisplay('game_schedule')" id="iconback" src="arrow_back.png">
+                </header>
+                
+                <button id="login" @click="login()">login</button>
+
+                <button id="send" @click="writeNewPost()">send</button>
+                <input id="textInput" v-model="message" placeholder="Write message">
+                <p>Message is: {{ message }}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-auth.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA8zPengq5JdYdgvMBqi5HstANebRRaSNk",
+            authDomain: "nysl-team-chat.firebaseapp.com",
+            databaseURL: "https://nysl-team-chat.firebaseio.com",
+            projectId: "nysl-team-chat",
+            storageBucket: "",
+            messagingSenderId: "417412620732",
+            appId: "1:417412620732:web:dcd9192674d3f98a"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <!--    <script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body></html>

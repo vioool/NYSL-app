@@ -1,0 +1,291 @@
+.container {
+    display: grid;
+    grid-template-columns: 8px 4fr 8px;
+    grid-template-rows: 6fr;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+}
+
+header {
+    display: grid;
+    height: 52px;
+    grid-row-start: 1;
+    grid-column-start: span 6;
+    background-color: #FF5722;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+h1 {
+    font-weight: bolder;
+    font-size: 20px;
+
+}
+
+h2 {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+    margin-top: 24px;
+    padding-left: 72px;
+    color: white
+}
+
+h6.teams {
+    font-size: 16px;
+    color: #FF5722;
+    padding: 0;
+}
+
+img#iconchat {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+}
+
+img#iconback {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+}
+
+.banner {
+    display: grid;
+    grid-row-start: 2;
+    grid-column-start: span 6;
+}
+
+.next-game {
+    grid-column-start: span 6;
+}
+
+.map {
+    display: grid;
+    height: 196px;
+    grid-row-start: 2;
+    grid-column-start: span 6;
+    background-color: rgba(0, 0, 0, 0.28);
+}
+
+iframe {
+    height: inherit;
+    width: 100%;
+    border-width: 0;
+    z-index: -1;
+}
+
+.gamepage {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.address {
+    display: grid;
+    height: 112px;
+    grid-row-start: 3;
+    grid-column-start: span 6;
+    text-align: start;
+    padding-bottom: 32px;
+}
+
+.teamblock {
+    height: 56px;
+    grid-row-start: 4;
+    grid-column-start: span 6;
+    border-width: 2px;
+    border-color: rgb(169, 169, 169);
+    border-top-color: rgb(169, 169, 169);
+    border-right-color: rgb(169, 169, 169);
+    border-bottom-color: rgb(169, 169, 169);
+    border-left-color: rgb(169, 169, 169);
+}
+
+.general {
+    margin-top: 16px;
+    height: 150px;
+    grid-row-start: 5;
+    grid-column-start: span 6;
+}
+
+/*
+.imgtitle {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: end;
+    color: #FF5722;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+*/
+
+/*
+.imgheadline {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    font-weight: lighter;
+    color: white;
+}
+*/
+
+.responsive {
+    grid-column: 1 / 5;
+    grid-row: 1;
+    width: 100%;
+    z-index: -1;
+}
+
+.filterbar {
+    display: grid;
+    height: 48px;
+    grid-row-start: 3;
+    grid-column-start: span 6;
+    margin-bottom: 8px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 52px;
+}
+
+img#icondown {
+    position: absolute;
+    top: 12px;
+    right: 24px;
+}
+
+option {
+    position: absolute;
+    top: 16px;
+    padding-left: 24px;
+    padding-right: 24px;
+    text-transform: uppercase;
+}
+
+select#team-selector {
+    height: 48px;
+    width: 100%;
+}
+
+select {
+    padding-left: 24px;
+    padding-right: 24px;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+}
+
+.saturday {
+    height: 32px;
+    width: 100%;
+    padding-left: 16px;
+    font-weight: bolder;
+    color: rgba(16, 16, 16, 0.6)
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    font-weight: bolder;
+    padding: 16px;
+}
+
+h5 {
+    font-weight: bolder;
+    padding-left: 16px;
+}
+
+button {
+    background-color: #FFFFFF;
+    height: 64px;
+    width: 100%;
+    border-radius: 2px;
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+    border: 0;
+    margin-bottom: 8px;
+}
+
+.topinfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.teams {
+    text-align: start;
+    padding-left: 16px;
+}
+
+p {
+    color: rgba(16, 16, 16, 0.6)
+}
+
+p.school {
+    text-align: start;
+    padding-bottom: 32px;
+    padding-left: 16px;
+}
+
+p.time {
+    text-align: end;
+    margin-top: 10px;
+    padding-right: 16px;
+}
+
+p.right {
+    text-align: end;
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+p.bottom {
+    text-align: end;
+    margin-top: 0px;
+    margin-bottom: 0;
+}
+
+.stepper {
+    height: 48px;
+    grid-row-start: 6;
+    grid-column-start: span 6;
+    align-items: center;
+
+}
+
+.stepper p {
+    text-transform: uppercase;
+    margin: 0;
+}
+
+button.next {
+    width: 49%;
+    margin: 0;
+    padding: 0;
+}
+
+button.prev {
+    width: 49%;
+    margin: 0;
+    padding: 0;
+}
+
+#login{
+    display: grid;
+    grid-row-start: 2;
+    grid-column-start: span 6;
+}
+
+#textInput{
+    display: grid;
+    grid-row-start: 3;
+    grid-column-start: span 6;
+}
+
+#send {
+    display: grid;
+    grid-row-start: 4;
+    grid-column-start: span 6;
+}
+
+
