@@ -5,15 +5,16 @@ var app = new Vue({
         gameData: [],
         teamList: [],
         filtered: [],
-        teamSelected: "anyTeam",
+        teamSelected: "all",
         selectedGame: {},
         show: 'next_game',
         message: '',
-        textInput: ''
+        shine: 'login'
     },
 
     created: function () {
         this.getData();
+        this.getPosts();
     },
 
     methods: {
@@ -49,6 +50,21 @@ var app = new Vue({
             console.log("login");
         },
 
+        logout: function () {
+
+            firebase
+                .auth()
+                .signOut()
+                .then(function () {
+                    // Sign-out successful.
+                })
+                .catch(function (error) {
+                    // An error happened
+                });
+
+            console.log("logout");
+        },
+
         writeNewPost: function () {
             // https://firebase.google.com/docs/database/web/read-and-write
 
@@ -70,10 +86,46 @@ var app = new Vue({
                 .ref("myChat")
                 .push(message);
 
+            //document.getElementsByTagName('h5').value='';
+            
             // A post entry.
 
             //Write data
         },
+
+        getPosts: function () {
+            // https://firebase.google.com/docs/database/web/read-and-write
+
+            console.log("getting posts");
+
+            firebase
+                .database()
+                .ref("myChat")
+                .on("value", function (data) {
+                    console.log("data: ", data);
+                    var mensajes = data.val();
+                    console.log("msgs: ", mensajes);
+
+                    var posts = document.getElementById("posts");
+                    posts.innerHTML = "";
+                    for (var key in mensajes) {
+                        var everyMessage = mensajes[key];
+                        console.log(key, everyMessage);
+
+                        var h5 = document.createElement("h5");
+                        h5.append(everyMessage.mensaje);
+                        posts.append(h5);
+                        
+                        var p = document.createElement("p");
+                        p.append(everyMessage.user);
+                        posts.append(p);
+                        
+                                              
+//                        posts.firstChild.nodeValue = data.timeStamp;
+
+                    }
+                });
+        }, // JavaScript source code
 
         filterGames: function () {
             app.filtered = [];
@@ -88,6 +140,10 @@ var app = new Vue({
 
         changeDisplay: function (page) {
             app.display = page
+        },
+
+        changeStatus: function (status) {
+            app.shine = status
         },
 
         changeGame: function (game) { // 1. first make the function B that changes the game

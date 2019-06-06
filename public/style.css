@@ -83,27 +83,23 @@ iframe {
 
 .address {
     display: grid;
-    height: 112px;
     grid-row-start: 3;
     grid-column-start: span 6;
     text-align: start;
-    padding-bottom: 32px;
+    padding-bottom: 16px;
 }
 
 .teamblock {
-    height: 56px;
     grid-row-start: 4;
     grid-column-start: span 6;
-    border-width: 2px;
-    border-color: rgb(169, 169, 169);
-    border-top-color: rgb(169, 169, 169);
-    border-right-color: rgb(169, 169, 169);
-    border-bottom-color: rgb(169, 169, 169);
-    border-left-color: rgb(169, 169, 169);
+    padding-bottom: 8px;
+    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid lightgrey;
 }
 
 .general {
     margin-top: 16px;
+    padding-right: 24px;
     height: 150px;
     grid-row-start: 5;
     grid-column-start: span 6;
@@ -172,6 +168,8 @@ select {
     padding-right: 24px;
     text-transform: uppercase;
     -webkit-appearance: none;
+    background-color: #FFFFFF;
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
 }
 
 .saturday {
@@ -197,7 +195,7 @@ h5 {
     padding-left: 16px;
 }
 
-button {
+.button {
     background-color: #FFFFFF;
     height: 64px;
     width: 100%;
@@ -246,11 +244,11 @@ p.bottom {
 }
 
 .stepper {
-    height: 48px;
-    grid-row-start: 6;
-    grid-column-start: span 6;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     align-items: center;
-
 }
 
 .stepper p {
@@ -259,33 +257,95 @@ p.bottom {
 }
 
 button.next {
-    width: 49%;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 16px;
+    background-color: #FFFFFF;
+    height: 48px;
+    width: 50%;
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+    border: 0;
 }
 
 button.prev {
-    width: 49%;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 16px;
+    background-color: #FFFFFF;
+    height: 48px;
+    width: 50%;
+    box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.1);
+    border: 0;
 }
 
-#login{
-    display: grid;
-    grid-row-start: 2;
-    grid-column-start: span 6;
+#login_button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding-right: 24px;
+    padding-top: 24px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0;
+    z-index: 1;
 }
 
-#textInput{
-    display: grid;
-    grid-row-start: 3;
-    grid-column-start: span 6;
+#logout_button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding-right: 24px;
+    padding-top: 24px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 0;
+    z-index: 1;
+}
+
+
+#posts {
+    position: fixed;
+    bottom: 40px;
+    left: 64px;
+    right: 24px;
+
+}
+
+#textInput {
+    position: fixed;
+    bottom: 0;
+    width: 70%;
+    left: 8px;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    margin: 8px;
+}
+
+input#textInput {
+    padding-left: 8px;
+}
+
+h5 {
+    font-weight: 100;
+    line-height: 20px;
+    overflow-wrap: break-word;
+    color: rgba(16, 16, 16, 0.6);
+    border: 1px solid lightgrey;
+    margin-bottom: 0;
 }
 
 #send {
-    display: grid;
-    grid-row-start: 4;
-    grid-column-start: span 6;
+    position: fixed;
+    bottom: 0;
+    width: 15%;
+    right: 16px;
+    border: 1px solid lightgrey;
+    border-radius: 15px;
+    color: #FFFFFF;
+    background-color: #FF5722;
+    margin: 8px;
 }
-
-

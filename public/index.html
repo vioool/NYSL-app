@@ -36,9 +36,9 @@
                 </div>
 
                 <div class="filterbar">
+                    <img id="icondown" src="chevron_down.png">
                     <select id='team-selector' v-on:change="filterGames" v-model="teamSelected">
                         <option value="all">Select Team</option>
-                        <img id="icondown" src="chevron_down.png">
                         <option v-for="option in teamList" v-bind:value="option">
                             <p> {{ option }} </p>
                         </option>
@@ -107,19 +107,28 @@
             </div>
         </div>
 
-        <div id="team_chat" v-if="display == 'team_chat'">
+        <div id="team_chat" v-show="display == 'team_chat'">
             <div class="container">
 
                 <header>
                     <h2 id="title">Team Chat</h2>
                     <img @click="changeDisplay('game_schedule')" id="iconback" src="arrow_back.png">
                 </header>
-                
-                <button id="login" @click="login()">login</button>
 
-                <button id="send" @click="writeNewPost()">send</button>
-                <input id="textInput" v-model="message" placeholder="Write message">
-                <p>Message is: {{ message }}</p>
+                <div id="logout" v-if="shine == 'login'">
+                    <div id="posts"></div>
+                    	
+                    <button id="logout_button" @click="changeStatus('logout'), logout()">logout</button>
+                </div>
+
+                <div id="login" v-if="shine == 'logout'">
+                    <button id="login_button" @click="changeStatus('login'), login()">login</button>
+                </div>
+
+                <div class="message">
+                    <button id="send" @click="writeNewPost()">send</button>
+                    <input id="textInput" v-model="message" placeholder="Write message">
+                </div>
             </div>
         </div>
     </div>
