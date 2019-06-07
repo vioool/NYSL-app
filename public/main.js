@@ -9,7 +9,7 @@ var app = new Vue({
         selectedGame: {},
         show: 'next_game',
         message: '',
-        shine: 'login'
+        shine: 'login',
     },
 
     created: function () {
@@ -73,10 +73,15 @@ var app = new Vue({
             console.log(text);
             var name = firebase.auth().currentUser.displayName;
             console.log(name);
+            var image = firebase.auth().currentUser.photoURL;
 
             var message = {
                 mensaje: text,
-                user: name
+                user: name,
+                image: image,
+                currentDate: Date.now(),
+
+
             };
 
             console.log(message);
@@ -87,7 +92,8 @@ var app = new Vue({
                 .push(message);
 
             //document.getElementsByTagName('h5').value='';
-            
+            document.getElementById("textInput").value = "";
+
             // A post entry.
 
             //Write data
@@ -112,16 +118,32 @@ var app = new Vue({
                         var everyMessage = mensajes[key];
                         console.log(key, everyMessage);
 
+                        var userImage = document.createElement("IMG");
+                        userImage.setAttribute("id", "user_image");
+                        userImage.setAttribute("src", everyMessage.image)
+                        posts.append(userImage);
+
                         var h5 = document.createElement("h5");
                         h5.append(everyMessage.mensaje);
                         posts.append(h5);
                         
-                        var p = document.createElement("p");
-                        p.append(everyMessage.user);
-                        posts.append(p);
-                        
-                                              
-//                        posts.firstChild.nodeValue = data.timeStamp;
+                        var messageTag = document.createElement("DIV");
+                        messageTag.setAttribute("class", "messagetag");
+                        posts.append(messageTag);
+
+                        var nameTag = document.createElement("p");
+                        nameTag.setAttribute("class", "nametag");
+                        nameTag.append(everyMessage.user);
+                        messageTag.append(nameTag);
+
+                        var timeStamp = document.createElement("p");
+                        timeStamp.setAttribute("class", "time_stamp");
+                        let day = new Date(everyMessage.currentDate).getDate()
+                        let month = new Date(everyMessage.currentDate).getMonth()
+                        let year = new Date(everyMessage.currentDate).getFullYear()
+                        let dateString = day + "-" + (month + 1) + "-" + year
+                        timeStamp.append(dateString);
+                        messageTag.append(timeStamp);
 
                     }
                 });
@@ -140,6 +162,8 @@ var app = new Vue({
 
         changeDisplay: function (page) {
             app.display = page
+            
+            console.log(page);
         },
 
         changeStatus: function (status) {

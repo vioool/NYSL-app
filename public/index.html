@@ -32,12 +32,14 @@
                 </header>
 
                 <div class="banner">
-                    <img src="./banner.png" class="responsive">
+                    <img class="responsive" src="./banner.png">
                 </div>
 
                 <div class="filterbar">
                     <img id="icondown" src="chevron_down.png">
-                    <select id='team-selector' v-on:change="filterGames" v-model="teamSelected">
+                    <select id='team-selector' 
+                       v-on:change="filterGames" 
+                       v-model="teamSelected">
                         <option value="all">Select Team</option>
                         <option v-for="option in teamList" v-bind:value="option">
                             <p> {{ option }} </p>
@@ -93,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-                <!--<p>Next Game</p>-->
+
                 <div class="stepper">
                     <button @click="prevGame" class="prev">
                         <img src="chevron_left.png">
@@ -112,12 +114,13 @@
 
                 <header>
                     <h2 id="title">Team Chat</h2>
-                    <img @click="changeDisplay('game_schedule')" id="iconback" src="arrow_back.png">
+                    <img id="iconback" src="arrow_back.png" @click="changeDisplay('game_schedule')">
                 </header>
 
-                <div id="logout" v-if="shine == 'login'">
-                    <div id="posts"></div>
-                    	
+                <div id="logout" v-show="shine == 'login'">
+                    <div class="chatpage">
+                        <div id="posts"></div>
+                    </div>
                     <button id="logout_button" @click="changeStatus('logout'), logout()">logout</button>
                 </div>
 
