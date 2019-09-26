@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html manifest="offline.appcache" lang="en">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="apple-mobile-web-app-title" content="NYSL">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/12cca63b94.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!--
-    <link rel="apple-touch-startup-image" href="https://3wga6448744j404mpt11pbx4-wpengine.netdna-ssl.com/startup-image.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon-iphone.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
-    <link rel="shortcut icon" sizes="196x196" href="icon-196x196.png">
--->
+
     <title>Game Schedule</title>
 </head>
 
 <body>
     <div id="main">
-        <div id="game_schedule" v-if="display == 'game_schedule'">
+        <div id="game_schedule" v-show="display == 'game_schedule'">
+            <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
             <div class="container">
                 <header>
                     <h2 id="title">Game Schedule</h2>
-                    <img @click="changeDisplay('team_chat')" id="iconchat" src="message_icon.png">
+                    <img @click="followRoute(); changeDisplay('team_chat')" id="iconchat" src="message_icon.png">
                 </header>
 
                 <div class="banner">
@@ -37,9 +33,8 @@
 
                 <div class="filterbar">
                     <img id="icondown" src="chevron_down.png">
-                    <select id='team-selector' 
-                       v-on:change="filterGames" 
-                       v-model="teamSelected">
+                    <select id='team-selector' v-on:change="filterGames" v-model="teamSelected">
+<!--                       <i class="fa fa-angle-up fa-lg"></i>-->
                         <option value="all">Select Team</option>
                         <option v-for="option in teamList" v-bind:value="option">
                             <p> {{ option }} </p>
@@ -49,8 +44,8 @@
 
                 <div class="date">
                     <div class="card" v-for="(match, index) in filtered" v-bind:key="index">
-                        <div class="saturday" v-if="index % 2 == 0">{{match.day}}</div>
-                        <button @click="changeDisplay('location'), changeGame(match)" class="button">
+                        <div class="saturday" v-show="index % 2 == 0">{{match.day}}</div>
+                        <button @click="followRoute(); changeDisplay('location'), changeGame(match)" class="button">
                             <!--4. add a second function B to the select on click element C with a parameter (match) that refers to the parameter (game) in the function B-->
                             <div class="topinfo">
                                 <h4 class="teams">{{match.teamA}} vs. {{match.teamB}}</h4>
@@ -63,16 +58,16 @@
             </div>
         </div>
 
-        <div id="location" v-if="display == 'location'">
+        <div id="location" v-show="display == 'location'">
             <div class="container">
                 <header>
                     <h2 id="title">Location</h2>
-                    <img @click="changeDisplay('team_chat')" id="iconchat" src="message_icon.png">
-                    <img @click="changeDisplay('game_schedule')" id="iconback" src="arrow_back.png">
+                    <img @click="followRoute(); changeDisplay('team_chat')" id="iconchat" src="message_icon.png">
+                    <img @click="prevPage()" id="iconback" src="arrow_back.png">
                 </header>
                 <!--current game-->
-                <div class="next-game" v-if="show == 'next_game'">
-                    <div class="map">
+                <div class="next-game" v-show="show == 'next_game'">
+                    <div id="map">
                         <iframe v-bind:src="selectedGame.iframe"></iframe>
                     </div>
                     <!--5. to access the right data in JSON use the sourse var A with the right place in the object in JSON-->
@@ -114,27 +109,35 @@
 
                 <header>
                     <h2 id="title">Team Chat</h2>
-                    <img id="iconback" src="arrow_back.png" @click="changeDisplay('game_schedule')">
+                    <img id="iconback" src="arrow_back.png" @click="prevPage()">
                 </header>
 
                 <div id="logout" v-show="shine == 'login'">
                     <div class="chatpage">
-                        <div id="posts"></div>
+                        <div id="posts" class="box"></div>
                     </div>
-                    <button id="logout_button" @click="changeStatus('logout'), logout()">logout</button>
+                    <button id="logout_button" @click="changeStatus('logout'), logout()">log out</button>
+                    <div class="message" @click.enter="writeNewPost()">
+                        <button id="send">send</button>
+                        <input id="textInput" v-model="message" placeholder="Write message">
+                    </div>
                 </div>
 
-                <div id="login" v-if="shine == 'logout'">
+                <div id="login" v-show="shine == 'logout'">
                     <button id="login_button" @click="changeStatus('login'), login()">login</button>
+                    <h4 class="start_chat">Login to start chatting</h4>
+                    <div class="message">
+                        <button id="no_send">send</button>
+                        <input class="no_text" id="textInput" placeholder="">
+                    </div>
                 </div>
 
-                <div class="message">
-                    <button id="send" @click="writeNewPost()">send</button>
-                    <input id="textInput" v-model="message" placeholder="Write message">
-                </div>
             </div>
         </div>
     </div>
+
+
+
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
@@ -158,8 +161,16 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
+
     </script>
     <!--    <script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvloynN_6h0daEAIS4fphPs_ZfK2HiLjg&callback=initMap"></script>
+    <script>
+
+
+    </script>
     <script src="main.js"></script>
-</body></html>
+</body>
+
+</html>
